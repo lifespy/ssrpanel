@@ -91,6 +91,7 @@ class LoginController extends BaseController
             $userInfo = User::query()->where('id', $user->id)->first();
 
             $request->session()->put('user', $userInfo->toArray());
+            $request->session()->put('sessionUser', $userInfo);
 
             // 根据权限跳转
             if ($user->is_admin) {

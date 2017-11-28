@@ -120,6 +120,12 @@
                         <span class="title">购买服务</span>
                     </a>
                 </li>
+                <li class="nav-item {{in_array(Request::getRequestUri(), ['/user/rechargeList', '/user/rechargeList']) ? 'active open' : ''}}">
+                    <a href="{{url('user/rechargeList')}}" class="nav-link nav-toggle">
+                        <i class="fa fa-jpy"></i>
+                        <span class="title">充值记录</span>
+                    </a>
+                </li>
                 <li class="nav-item {{Request::getRequestUri() == '/user/trafficLog' ? 'active open' : ''}}">
                     <a href="{{url('user/trafficLog')}}" class="nav-link nav-toggle">
                         <i class="icon-speedometer"></i>

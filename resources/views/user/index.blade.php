@@ -93,10 +93,15 @@
                             <span class="badge badge-danger">
                                 <a href="javascript:;" data-toggle="modal" data-target="#charge_modal" style="color:#FFF;">充值</a>
                             </span>
-                            &ensp;&ensp;积分：{{$info['score']}}
+                                积分：{{$info['score']}}
                             <span class="badge badge-danger">
                                 <a href="javascript:;" data-toggle="modal" data-target="#excharge_modal" style="color:#FFF;">兑换</a>
                             </span>
+                        </p>
+                        <p class="text-muted">
+                            <form action="/yft/subOrder" method="post" target="_blank">
+                            余额充值：<input id="recharge" name="price" type="number"> 元 <input type="hidden" name="_token" value="{{ csrf_token() }}" /><input type="submit" value="充值">
+                            </form>
                         </p>
                         <p class="text-muted"> 账号到期：{{date('Y-m-d 0:0:0') > $info['expire_time'] ? '已过期' : $info['expire_time']}} </p>
                         <p class="text-muted"> 最后使用：{{empty($info['t']) ? '从未使用' : date('Y-m-d H:i:s', $info['t'])}} </p>
