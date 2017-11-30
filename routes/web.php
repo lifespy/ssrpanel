@@ -10,6 +10,7 @@ Route::get('active/{token}', 'UserController@active'); // 激活账号
 Route::get('subscribe/{code}', 'SubscribeController@index'); // 节点订阅地址
 Route::get('article', 'ArticleController@index'); // 定位文章详情
 Route::post('locate', 'LocateController@locate'); // 上报文章打开时的定位
+Route::any('yft/notify', 'AnyPayController@yft_callback'); // 支付返回结果地址
 
 Route::group(['middleware' => ['user', 'admin']], function() {
     Route::get('admin', 'AdminController@index'); // 后台首页
@@ -96,4 +97,6 @@ Route::group(['middleware' => ['user']], function() {
     Route::post('user/exchange', 'UserController@exchange'); // 积分兑换流量
     Route::get('user/referral', 'UserController@referral'); // 推广返利
     Route::post('user/extractMoney', 'UserController@extractMoney'); // 申请提现
+    Route::post('yft/subOrder', 'AnyPayController@subOrder'); // 跳转充值
+    Route::get('user/rechargeList', 'AnyPayController@rechargeList'); // 充值记录
 });

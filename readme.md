@@ -140,6 +140,13 @@ crontab -e
 config\mail.php 修改其中的配置
 ````
 
+#### 用户自助充值配置
+````
+将sql\yft_order_info.sql 导入到数据库中
+前往https://pay.anypay.me注册一个账号并打开“商户入网”，将网址进行授权，授权之后点击网址列表后的“配置”可得到两个码。将之对应填写到app/Http/Controllers/PayConfig.php文件中，注意删除原有的示例数据。
+接下来就可以前往用户首页进行充值测试了
+````
+
 ## 日志分析（目前仅支持单机单节点）
 ````
 找到SSR服务端所在的ssserver.log文件
