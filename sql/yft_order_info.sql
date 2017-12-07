@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地数据库
-Source Server Version : 50553
+Source Server         : 本地测试
+Source Server Version : 50557
 Source Host           : localhost:3306
-Source Database       : sspanel
+Source Database       : panghu
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50557
 File Encoding         : 65001
 
-Date: 2017-10-24 19:53:13
+Date: 2017-12-07 11:04:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,10 +26,7 @@ CREATE TABLE `yft_order_info` (
   `yft_order` varchar(50) DEFAULT NULL,
   `price` varchar(10) DEFAULT NULL,
   `state` tinyint(1) DEFAULT NULL COMMENT '0代表未支付，1代表已支付',
-  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of yft_order_info
--- ----------------------------
